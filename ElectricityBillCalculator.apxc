@@ -1,0 +1,21 @@
+public class ElectricityBillCalculator {
+	public static Decimal calculateBill(Integer units) {
+        Decimal rate = 0;       
+        if (units <= 50) {
+            rate = 3.50;
+        } else if (units <= 100) {
+            rate = 4.50;
+        } else if (units <= 200) {
+            rate = 6;
+        } else {
+            rate = 7;
+        }     
+        return units * rate;
+    }
+}
+
+***************************************************************
+Usecase Input
+Integer units = 150; 
+Decimal billAmount = ElectricityBillCalculator.calculateBill(units);
+System.debug('Electricity Bill Amount: $' + billAmount);

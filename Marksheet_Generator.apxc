@@ -1,0 +1,46 @@
+public class MarkSheet_Generator {
+    public static void generateMarkSheet(String studentname, Map<String, Integer> subjectmarks) {
+        Integer totalmarks = 0;
+        Integer numberofsubjects = subjectmarks.size();
+        // Calculate total marks
+        for (Integer marks : subjectmarks.values()) {
+            totalmarks += marks;
+        }
+        // Calculate percentage
+        Decimal percentage = (Decimal) totalmarks / (numberofsubjects * 100) * 100;
+        // Calculate grade
+        String grade = calculateGrade(percentage);
+        // Print mark sheet
+        System.debug('Student Name: ' + studentname);
+        System.debug('Subject\t\tMarks');
+        for (String subject : subjectmarks.keySet()) {
+            System.debug(subject + '\t\t' + subjectmarks.get(subject));
+        }
+        System.debug('Total Marks: ' + totalmarks);
+        System.debug('Percentage: ' + percentage + '%');
+        System.debug('Grade: ' + grade);
+    }
+    private static String calculateGrade(Decimal percentage) {
+        if (percentage >= 90) {
+            return 'A+';
+        } else if (percentage >= 80) {
+            return 'A';
+        } else if (percentage >= 70) {
+            return 'B';
+        } else if (percentage >= 60) {
+            return 'C';
+        } else if (percentage >= 50) {
+            return 'D';
+        } else {
+            return 'F';
+        }
+    }
+}
+*********************************************************************
+Usecase Input:
+Map<String, Integer> subjectmarks = new Map<String, Integer>{
+    'Maths' => 85,
+    'Science' => 90,
+    'English' => 80
+};
+MarkSheet_Generator.generateMarkSheet('Pratiksha Patare', subjectmarks);

@@ -1,0 +1,55 @@
+public class MathematicalCalculator {
+    public static Decimal add(Decimal num1, Decimal num2) {
+        return num1 + num2;
+    }
+
+    public static Decimal subtract(Decimal num1, Decimal num2) {
+        return num1 - num2;
+    }
+
+    public static Decimal multiply(Decimal num1, Decimal num2) {
+        return num1 * num2;
+    }
+
+    public static Decimal divide(Decimal num1, Decimal num2) {
+        return (num2 == 0) ? 0 : num1 / num2;
+    }
+
+    public static Decimal exponentiation(Decimal base, Decimal exponent) {
+        return Decimal.valueOf(Math.pow(base.doubleValue(), exponent.doubleValue()));
+    }
+
+    public static Integer modulo(Integer num1, Integer moduloBy) {
+        return (moduloBy == 0) ? 0 : Math.mod(num1, moduloBy);
+    }
+
+    public static Decimal square(Decimal num) {
+        return num * num;
+    }
+
+    public static Decimal squareRoot(Decimal num) {
+        return (num < 0) ? 0 : Math.sqrt(num);
+    }
+}
+
+******************************************************************************************************************************************
+Usecase Input
+MathematicalCalculator calc = new MathematicalCalculator();
+
+Decimal resultAdd = MathematicalCalculator.add(5, 3);
+Decimal resultSubtract = MathematicalCalculator.subtract(5, 3);
+Decimal resultMultiply = MathematicalCalculator.multiply(5, 3);
+Decimal resultDivide = MathematicalCalculator.divide(5, 3);
+Decimal resultExponent = MathematicalCalculator.exponentiation(5, 3);
+Integer resultModulo = MathematicalCalculator.modulo(5, 3);
+Decimal resultSquare = MathematicalCalculator.square(5);
+Decimal resultSquareRoot = MathematicalCalculator.squareRoot(5);
+
+System.debug('Addition: ' + resultAdd);
+System.debug('Subtraction: ' + resultSubtract);
+System.debug('Multiplication: ' + resultMultiply);
+System.debug('Division: ' + resultDivide);
+System.debug('Exponentiation: ' + resultExponent);
+System.debug('Modulo: ' + resultModulo);
+System.debug('Square: ' + resultSquare);
+System.debug('Square root: ' + resultSquareRoot);

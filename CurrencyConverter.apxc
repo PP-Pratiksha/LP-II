@@ -1,0 +1,51 @@
+public class CurrencyConverter {
+    // Conversion rates
+    public static final Decimal URD_TO_INR = 83.38;
+    public static final Decimal URD_TO_EUR = 0.93;
+    public static final Decimal EUR_TO_INR = 89.82;
+    
+    // Convert URD to INR
+    public static void convertURDToINR(Decimal urdAmount) {
+        Decimal inrAmount = urdAmount * URD_TO_INR;
+        System.debug('URD to INR: ' + inrAmount);
+    }
+    
+    // Convert INR to URD
+    public static void convertINRToURD(Decimal inrAmount) {
+        Decimal urdAmount = inrAmount / URD_TO_INR;
+        System.debug('INR to URD: ' + urdAmount);
+    }
+    
+    // Convert URD to EUR
+    public static void convertURDToEUR(Decimal urdAmount) {
+        Decimal eurAmount = urdAmount * URD_TO_EUR;
+        System.debug('URD to EUR: ' + eurAmount);
+    }
+    
+    // Convert EUR to URD
+    public static void convertEURToURD(Decimal eurAmount) {
+        Decimal urdAmount = eurAmount / URD_TO_EUR;
+        System.debug('EUR to URD: ' + urdAmount);
+    }
+    
+    // Convert EUR to INR
+    public static void convertEURToINR(Decimal eurAmount) {
+        Decimal inrAmount = eurAmount * EUR_TO_INR;
+        System.debug('EUR to INR: ' + inrAmount);
+    }
+    
+    // Convert INR to EUR
+    public static void convertINRToEUR(Decimal inrAmount) {
+        Decimal eurAmount = inrAmount / EUR_TO_INR;
+        System.debug('INR to EUR: ' + eurAmount);
+    }
+}
+
+****************************************************
+Usecase Input:
+Decimal usdAmount = 100.0;
+Decimal eurAmount = CurrencyConverter.convertUSDToEUR(usdAmount);
+System.debug('100 USD is equal to ' + eurAmount + ' EUR');
+
+Decimal inrAmount = CurrencyConverter.convertUSDToINR(usdAmount);
+System.debug('100 USD is equal to ' + inrAmount + ' INR');
